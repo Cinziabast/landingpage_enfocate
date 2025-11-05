@@ -1,205 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ENFÓCATE · Registro</title>
-  <meta name="description" content="Consigue clientes constantes y vive de tu fotografía con seguridad y estrategia. Accede al entrenamiento gratuito.">
-  <!-- Open Graph -->
-  <meta property="og:title" content="ENFÓCATE · Registro">
-  <meta property="og:description" content="Consigue clientes constantes y vive de tu fotografía con seguridad y estrategia. Accede al entrenamiento gratuito.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://TU-USER.github.io/landing-enfocate/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing ENFÓCATE | Muestra</title>
   <style>
-    :root{
-      --bg:#ffffff;
-      --text:#0f1221;
-      --muted:#5f6472;
-      --brand:#6c5ce7;         /* morado */
-      --brand-700:#5948d9;
-      --card:#f6f7fb;
-      --ring: rgba(108,92,231,.35);
-      --ok:#12b886;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "DM Sans", Arial, sans-serif;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
-    img{max-width:100%;height:auto;display:block}
-    a{color:var(--brand);text-decoration:none}
-    .container{width:min(1120px,90vw);margin-inline:auto}
-    .nav{padding:16px 0;display:flex;justify-content:space-between;align-items:center;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:Montserrat, sans-serif}
-    .brand .logo{
-      width:36px;height:36px;border-radius:10px;
-      background:linear-gradient(135deg,var(--brand) 0%, var(--brand-700) 100%);
-      box-shadow:0 10px 20px -10px var(--ring);
+
+    body {
+      color: #111;
+      background-color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0.90),
+          rgba(255, 255, 255, 0.90)
+        ),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 40px 20px;
     }
-    .brand span{font-weight:800;letter-spacing:.3px}
-    .hero{padding:72px 0 40px;position:relative;isolation:isolate}
-    .hero .bg{
-      position:absolute;inset:-60px -20px auto -20px;height:380px;z-index:-1;
-      background:
-        radial-gradient(1200px 240px at 50% -30px, rgba(108,92,231,.10), transparent 60%),
-        linear-gradient(180deg,#fff, #fafbff);
+
+    .hero {
+      max-width: 950px;
+      padding: 60px 40px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     }
-    .eyebrow{color:var(--brand);font-weight:600;font-size:14px;letter-spacing:.5px;margin-bottom:12px}
-    h1{font-family:Montserrat, sans-serif;font-size:clamp(32px,5vw,46px);line-height:1.15;margin:0 0 14px}
-    .sub{font-size:clamp(16px,2.4vw,20px);color:var(--muted);max-width:850px;margin:0 auto 18px}
-    .benefits{display:grid;grid-template-columns:1fr;gap:10px;margin:18px auto 26px;max-width:870px}
-    .benefits li{list-style:none;display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border-radius:12px;background:#fff;box-shadow:0 6px 20px -14px rgba(15,18,33,.15)}
-    .benefits svg{flex:0 0 20px; margin-top:2px}
-    .cta-wrap{display:flex;justify-content:center}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:14px 22px;border-radius:14px;background:var(--brand);color:#fff;font-weight:700;
-      font-family:Montserrat, sans-serif;letter-spacing:.2px;border:2px solid transparent;
-      box-shadow:0 14px 30px -12px var(--ring);transition:.2s ease;
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #111111;
+      margin-bottom: 18px;
     }
-    .btn:hover{background:var(--brand-700);transform:translateY(-1px)}
-    .micro{margin-top:10px;color:#7b8190;font-size:13px;text-align:center}
-    .trust{margin:46px auto 0;display:flex;gap:16px;flex-wrap:wrap;justify-content:center;color:#6b7280;font-size:14px}
-    .trust .chip{background:var(--card);padding:10px 14px;border-radius:999px;border:1px solid #e6e9f5}
-    /* sección info corta */
-    .info{padding:46px 0 16px}
-    .card{background:#fff;border:1px solid #e9eef6;border-radius:18px;padding:22px;display:grid;gap:12px}
-    .card h3{margin:0;font-family:Montserrat, sans-serif}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    @media (max-width:860px){ .grid-2{grid-template-columns:1fr}}
-    footer{padding:40px 0 60px;color:#7b8190;font-size:14px}
-    .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    /* simple form styles */
-    form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
-    input[type="email"]{
-      padding:14px 16px;border-radius:12px;border:1.5px solid #dbe1f1;min-width:280px;font-size:16px;outline:none;
+
+    p.subtitulo {
+      font-size: 1.2rem;
+      color: #444444;
+      line-height: 1.6;
+      margin-bottom: 28px;
     }
-    input[type="email"]:focus{border-color:var(--brand); box-shadow:0 0 0 4px var(--ring)}
+
+    ul {
+      list-style: none;
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto 32px auto;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 28px;
+    }
+
+    ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #6C5CE7;
+      font-weight: bold;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background-color: #6C5CE7;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 36px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #5948D9;
+    }
+
+    .microcopy {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p.subtitulo {
+        font-size: 1rem;
+      }
+      ul li {
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
+
 <body>
+  <section class="hero">
+    <h1>Consigue clientes constantes y vive de tu fotografía con seguridad y estrategia</h1>
 
-  <!-- NAV -->
-  <header class="container nav" aria-label="Navegación">
-    <div class="brand" aria-label="Marca ENFÓCATE">
-      <div class="logo" aria-hidden="true"></div>
-      <span>ENFÓCATE</span>
-    </div>
-    <a class="btn" href="#registro" aria-label="Ir al registro">Quiero ver el video ahora</a>
-  </header>
+    <p class="subtitulo">
+      Regístrate gratis y descubre el método para atraer clientes que valoran tu trabajo, vender sin bajar precios y construir un negocio fotográfico estable, sólido y rentable.
+    </p>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio" aria-labelledby="t1">
-    <div class="bg" aria-hidden="true"></div>
-    <div class="container" style="text-align:center">
-      <div class="eyebrow">Programa ENFÓCATE · 12 semanas</div>
-      <h1 id="t1">Consigue clientes constantes y vive de tu fotografía con seguridad y estrategia</h1>
-      <p class="sub">Regístrate gratis y descubre el método para atraer clientes que valoran tu trabajo, vender sin bajar precios y construir un negocio fotográfico estable, sólido y rentable.</p>
+    <ul>
+      <li>Aprende cómo posicionarte como profesional y no como opción barata</li>
+      <li>Atrae clientes comprometidos dispuestos a pagar tu valor</li>
+      <li>Construye un sistema que te dé estabilidad y previsibilidad</li>
+      <li>Empodérate como fotógrafo/a y toma control de tu negocio</li>
+    </ul>
 
-      <ul class="benefits" aria-label="Beneficios clave">
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Posiciónate como profesional (no como opción barata)</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Atrae clientes comprometidos dispuestos a pagar tu valor</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Construye un sistema que te dé estabilidad y previsibilidad</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Empodérate y toma el control de tu negocio fotográfico</span>
-        </li>
-      </ul>
+    <a href="#" class="cta-btn">Quiero ver el video ahora</a>
 
-      <div class="cta-wrap">
-        <a href="#registro" class="btn" aria-label="Ver el video ahora">Quiero ver el video ahora</a>
-      </div>
-      <div class="micro">Acceso gratuito. Sin spam. Podrás darte de baja en un clic.</div>
-
-      <div class="trust" aria-label="Pruebas de confianza">
-        <div class="chip">+ de 12 semanas de acompañamiento</div>
-        <div class="chip">Mentoría probada con fotógrafos reales</div>
-        <div class="chip">Evergreen · Flexible</div>
-      </div>
-    </div>
+    <p class="microcopy">Acceso gratuito. Sin spam. Podrás darte de baja en un clic.</p>
   </section>
-
-  <!-- SECCIÓN CORTA (qué vas a ver) -->
-  <section class="info" aria-labelledby="t2">
-    <div class="container grid-2">
-      <div class="card">
-        <h3 id="t2">¿Qué verás en el entrenamiento?</h3>
-        <p>Las piezas clave para conseguir clientes constantes, comunicar tu valor sin descuentos y operar con un sistema claro que te permita vivir de tu fotografía con seguridad.</p>
-        <ul>
-          <li>La estrategia que funciona HOY para atraer clientes.</li>
-          <li>Cómo elevar tu posicionamiento y tu precio.</li>
-          <li>Pasos para ordenar tu negocio y salir del caos.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>¿Para quién es?</h3>
-        <p>Fotógrafos/as y videógrafos/as comprometidos que ya han empezado y quieren profesionalizar su negocio, crecer y tomar acción con un método claro.</p>
-        <p style="margin:0;color:var(--muted)">Si estás comenzando desde cero también podrás extraer claridad, pero el foco está en quienes desean crecer con decisión.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- REGISTRO -->
-  <section class="container" id="registro" aria-labelledby="t3" style="padding:22px 0 6px;">
-    <h3 id="t3" class="sr-only">Registro</h3>
-
-    <!-- MODO FORMULARIO (Systeme.io) -->
-    <!-- Reemplaza action por tu URL de formulario en Systeme.io -->
-    <form action="{{SYSTEME_FORM_ACTION}}" method="post" onsubmit="return handleSubmit(event)">
-      <label for="email" class="sr-only">Tu email</label>
-      <input id="email" name="email" type="email" placeholder="Tu email" required aria-required="true">
-      <button class="btn" type="submit" aria-label="Enviar y ver el video">Quiero ver el video ahora</button>
-    </form>
-
-    <!-- MODO BOTÓN (si aún no tienes formulario). Descomenta esto y comenta el <form> de arriba:
-    <div class="cta-wrap" style="margin-top:10px">
-      <a class="btn" href="https://tu-enlace-systeme-landing" target="_blank" rel="noopener">Quiero ver el video ahora</a>
-    </div>
-    -->
-    <p class="micro">Al registrarte aceptas recibir información relacionada. Darse de baja es inmediato.</p>
-  </section>
-
-  <footer class="container">
-    <div style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap">
-      <span>© <span id="y"></span> ENFÓCATE · Gloria Solans</span>
-      <span><a href="#">Aviso legal</a> · <a href="#">Privacidad</a></span>
-    </div>
-  </footer>
-
-  <script>
-    // año en footer
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // scroll suave
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        const el = document.querySelector(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-      })
-    });
-
-    // manejo básico de submit (puedes quitarlo si systeme ya procesa)
-    function handleSubmit(e){
-      // Si dejaste {{SYSTEME_FORM_ACTION}} sin cambiar, evita error en demo
-      const form = e.target;
-      if(form.action.includes('{{SYSTEME_FORM_ACTION}}')){
-        e.preventDefault();
-        alert('Demo: agrega la URL de tu formulario de systeme.io en "action" para activar el registro.');
-        return false;
-      }
-      return true;
-    }
-  </script>
 </body>
 </html>
