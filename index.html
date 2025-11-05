@@ -3,73 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ENFÓCATE · Demo de Landing (HERO)</title>
-  <meta name="description" content="Demo de la sección HERO para la página de registro del entrenamiento ENFÓCATE (12 semanas para fotógrafos que quieren un negocio estable y rentable)." />
-  <meta name="theme-color" content="#6c5ce7" />
-  <meta name="color-scheme" content="light" />
+  <title>ENFÓCATE · Demo HERO</title>
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="ENFÓCATE · Consigue clientes constantes y vive de tu fotografía" />
-  <meta property="og:description" content="Método para atraer clientes que valoran tu trabajo, vender sin bajar precios y construir un negocio fotográfico estable." />
-  <meta property="og:image" content="images/og-cover.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Preconnect + Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
 
-  <!-- Favicon (opcional) -->
-  <link rel="icon" href="images/favicon.png" />
-
   <style>
     :root{
-      --text:#0f172a;            /* slate-900 */
-      --muted:#475569;           /* slate-600 */
-      --accent:#6c5ce7;          /* morado primario */
+      --text:#0f172a;
+      --muted:#475569;
+      --accent:#6c5ce7;
       --accent-hover:#5948d9;
-      --bg:#f8fafc;              /* fondo claro */
-      --card:#ffffffcc;          /* glass */
+      /* degradado cálido */
+      --bg1:#fff7ed;
+      --bg2:#ffece1;
+
+      --card:#ffffffcc;
       --radius:18px;
       --shadow:0 18px 40px rgba(2,6,23,.10);
       --max:1150px;
-      --side-image:url('images/hero.jpg'); /* <-- CAMBIA TU FOTO */
+
+      /* imagen derecha (unsplash profesional) */
+      --side-image:url('https://images.unsplash.com/photo-1614944158590-1ffa18d44fd5?auto=format&fit=crop&w=1200&q=80');
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
-      font-family:"DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
-      line-height:1.45;
-      background:var(--bg);
-      text-rendering:optimizeLegibility;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      background:
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
     }
 
-    /* Accesibilidad: link para saltar contenido */
-    .skip-link{
-      position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
-    }
-    .skip-link:focus{
-      position:fixed;left:16px;top:16px;width:auto;height:auto;
-      background:#fff;color:#000;padding:10px 14px;border-radius:10px;z-index:9999;
-      box-shadow:0 8px 24px rgba(0,0,0,.15);
-    }
-
-    /* HERO */
     .hero{
       min-height:100dvh;
       display:grid;
       place-items:center;
       padding:clamp(24px,5vw,56px);
-      background:
-        radial-gradient(1200px 600px at 15% 10%, rgba(108,92,231,.08), transparent 60%),
-        radial-gradient(900px 500px at 95% 90%, rgba(108,92,231,.06), transparent 55%),
-        var(--bg);
     }
     .wrap{width:100%;max-width:var(--max);margin:auto}
 
@@ -84,36 +56,30 @@
       border:1px solid rgba(15,23,42,.06);
       box-shadow:var(--shadow);
       overflow:hidden;
-      transform:translateY(6px);
-      opacity:0;
-      animation:fadeUp .5s ease-out .05s forwards;
-    }
-    @keyframes fadeUp{
-      to{transform:translateY(0);opacity:1}
-    }
-    @media (prefers-reduced-motion: reduce){
-      .card{animation:none;opacity:1;transform:none}
     }
 
     .left{padding:clamp(22px,4.8vw,56px)}
+
+    .brand img{
+      height:54px; /* LOGO MÁS GRANDE */
+      width:auto;
+      object-fit:contain;
+      margin-bottom:14px;
+    }
+
     .eyebrow{
       color:var(--accent);
       font-weight:700;
-      letter-spacing:.02em;
-      text-transform:uppercase;
       font-size:12px;
-      margin-bottom:10px;
+      margin-bottom:12px;
+      text-transform:uppercase;
+      letter-spacing:.02em;
     }
-    .brand{
-      display:flex;align-items:center;gap:10px;margin-bottom:8px
-    }
-    .brand img{height:28px;width:auto;object-fit:contain}
-    .brand strong{font-weight:800;letter-spacing:.02em}
 
     h1{
-      font-family:"Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:"Montserrat";
       font-weight:800;
-      font-size:clamp(28px,4.8vw,44px);
+      font-size:clamp(30px,4.6vw,46px);
       line-height:1.12;
       margin:0 0 14px;
       letter-spacing:-.015em;
@@ -125,143 +91,67 @@
       max-width:62ch;
     }
     .bullets{display:grid;gap:10px;margin:0 0 28px}
-    .bullet{
-      display:grid;grid-template-columns:22px 1fr;gap:12px;
-      font-size:clamp(15px,2vw,18px)
-    }
+    .bullet{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:clamp(15px,2vw,18px)}
     .check{
       width:22px;height:22px;border-radius:50%;
       display:grid;place-items:center;
-      background:rgba(108,92,231,.12);color:var(--accent)
+      background:rgba(108,92,231,.12);
+      color:var(--accent);
     }
     .check svg{width:14px;height:14px}
 
     .cta{
-      display:inline-block;
-      background:var(--accent);
-      color:#fff;
-      text-decoration:none;
-      padding:14px 22px;
-      border-radius:12px;
-      font-weight:800;
-      font-family:"Montserrat", system-ui;
+      display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+      padding:14px 22px;border-radius:12px;font-weight:800;font-family:"Montserrat";
       box-shadow:0 10px 26px rgba(108,92,231,.35);
-      transition:transform .08s ease, background .15s ease;
+      transition:.15s;
     }
     .cta:hover{background:var(--accent-hover);transform:translateY(-1px)}
-    .cta:active{transform:translateY(0)}
-    .micro{font-size:12px;color:#64748b;margin-top:10px}
+    .micro{font-size:12px;color:#475569;margin-top:10px}
 
-    /* Panel derecho con foto en B/N y overlay */
     .right{
-      min-height:360px; position:relative;
+      min-height:360px;position:relative;
       background:
         linear-gradient(to top, rgba(15,23,42,.35), rgba(15,23,42,.15)),
         var(--side-image);
       background-size:cover;background-position:center;
-      filter:grayscale(100%) contrast(1.05) brightness(.9);
-    }
-    .right::after{
-      content:"";position:absolute;inset:0;
-      box-shadow: inset 0 0 0 2000px rgba(255,255,255,.04);
+      filter:grayscale(40%) contrast(1.06) brightness(.98);
     }
 
-    /* Responsive */
     @media (max-width: 980px){
       .card{grid-template-columns:1fr}
       .right{height:38vh}
     }
-
-    /* Pie demo muy sutil */
-    .demo-foot{
-      text-align:center;font-size:12px;color:#94a3b8;margin-top:14px
-    }
-
-    /* Utilidades */
-    .visually-hidden{
-      position:absolute!important;
-      height:1px;width:1px;
-      overflow:hidden;clip:rect(1px,1px,1px,1px);
-      white-space:nowrap;border:0;padding:0;margin:-1px;
-    }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <main id="contenido">
-    <section class="hero" role="banner" aria-label="Hero de registro ENFÓCATE">
-      <div class="wrap">
-        <div class="card">
-          <!-- Columna texto -->
-          <div class="left">
-            <div class="brand">
-              <img src="Logo_enfocate.png" alt="Logo ENFÓCATE" onerror="this.style.display='none'">
-              <strong class="visually-hidden">ENFÓCATE</strong>
-            </div>
-            <div class="eyebrow">Programa ENFÓCATE · 12 semanas</div>
+  <section class="hero">
+    <div class="wrap">
+      <div class="card">
+        <div class="left">
+          <img src="Logo_enfocate.png" alt="ENFÓCATE">
+          <div class="eyebrow">Programa ENFÓCATE · 12 semanas</div>
 
-            <h1>Consigue clientes constantes y vive de tu fotografía con seguridad y estrategia</h1>
+          <h1>Consigue clientes constantes y vive de tu fotografía con seguridad y estrategia</h1>
 
-            <p class="sub">
-              Regístrate gratis y descubre el método para atraer clientes que valoran tu trabajo, vender sin bajar precios y construir un negocio fotográfico estable, sólido y rentable.
-            </p>
+          <p class="sub">Regístrate gratis y descubre el método para atraer clientes que valoran tu trabajo, vender sin bajar precios y construir un negocio fotográfico estable, sólido y rentable.</p>
 
-            <div class="bullets" role="list">
-              <div class="bullet" role="listitem">
-                <span class="check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.55 17.6 4.9 12.95l1.4-1.4 3.25 3.25 8.15-8.15 1.4 1.4-9.55 9.55Z"/></svg>
-                </span>
-                <span>Aprende cómo posicionarte como profesional y no como opción barata</span>
-              </div>
-              <div class="bullet" role="listitem">
-                <span class="check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.55 17.6 4.9 12.95l1.4-1.4 3.25 3.25 8.15-8.15 1.4 1.4-9.55 9.55Z"/></svg>
-                </span>
-                <span>Atrae clientes comprometidos dispuestos a pagar tu valor</span>
-              </div>
-              <div class="bullet" role="listitem">
-                <span class="check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.55 17.6 4.9 12.95l1.4-1.4 3.25 3.25 8.15-8.15 1.4 1.4-9.55 9.55Z"/></svg>
-                </span>
-                <span>Construye un sistema que te dé estabilidad y previsibilidad</span>
-              </div>
-              <div class="bullet" role="listitem">
-                <span class="check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.55 17.6 4.9 12.95l1.4-1.4 3.25 3.25 8.15-8.15 1.4 1.4-9.55 9.55Z"/></svg>
-                </span>
-                <span>Empodérate como fotógrafo/a y toma control de tu negocio</span>
-              </div>
-            </div>
-
-            <a class="cta" href="#registro" aria-label="Quiero ver el video ahora">Quiero ver el video ahora</a>
-            <div class="micro">Acceso gratuito. Sin spam. Podrás darte de baja en un clic.</div>
+          <div class="bullets">
+            <div class="bullet"><span class="check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.55 17.6 4.9 12.95l1.4-1.4 3.25 3.25 8.15-8.15 1.4 1.4-9.55 9.55Z"/></svg></span><span>Aprende cómo posicionarte como profesional y no como opción barata</span></div>
+            <div class="bullet"><span class="check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.55 17.6 4.9 12.95l1.4-1.4 3.25 3.25 8.15-8.15 1.4 1.4-9.55 9.55Z"/></svg></span><span>Atrae clientes comprometidos dispuestos a pagar tu valor</span></div>
+            <div class="bullet"><span class="check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.55 17.6 4.9 12.95l1.4-1.4 3.25 3.25 8.15-8.15 1.4 1.4-9.55 9.55Z"/></svg></span><span>Construye un sistema que te dé estabilidad y previsibilidad</span></div>
+            <div class="bullet"><span class="check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.55 17.6 4.9 12.95l1.4-1.4 3.25 3.25 8.15-8.15 1.4 1.4-9.55 9.55Z"/></svg></span><span>Empodérate como fotógrafo/a y toma control de tu negocio</span></div>
           </div>
 
-          <!-- Columna visual -->
-          <div class="right" aria-hidden="true"></div>
+          <a class="cta" href="#">Quiero ver el video ahora</a>
+          <div class="micro">Acceso gratuito. Sin spam. Podrás darte de baja en un clic.</div>
         </div>
 
-        <p class="demo-foot">Demo de muestra · Sección HERO únicamente</p>
+        <div class="right"></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Ancla de destino del CTA (dummy, solo para la demo) -->
-    <div id="registro" class="visually-hidden" aria-hidden="true">Registro</div>
-  </main>
-
-  <!-- JSON-LD mínimo (opcional, mejora credibilidad SEO) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "ENFÓCATE",
-    "description": "Programa de mentoría de 12 semanas para fotógrafos/as que buscan un negocio estable y rentable.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Gloria Solans"
-    }
-  }
-  </script>
 </body>
 </html>
