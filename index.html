@@ -15,16 +15,18 @@
       --muted:#475569;
       --accent:#6c5ce7;
       --accent-hover:#5948d9;
-      /* degradado cálido */
-      --bg1:#fff7ed;
-      --bg2:#ffece1;
+
+      /* nuevo fondo lila */
+      --bg1:#f5f3ff;
+      --bg2:#ebe7ff;
+      --bg-base:#faf7ff;
 
       --card:#ffffffcc;
       --radius:18px;
       --shadow:0 18px 40px rgba(2,6,23,.10);
       --max:1150px;
 
-      /* imagen derecha (unsplash profesional) */
+      /* imagen derecha (unsplash pro) */
       --side-image:url('https://images.unsplash.com/photo-1614944158590-1ffa18d44fd5?auto=format&fit=crop&w=1200&q=80');
     }
 
@@ -34,7 +36,10 @@
       font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+        radial-gradient(1200px 600px at 15% 10%, rgba(108,92,231,.10), transparent 60%),
+        radial-gradient(900px 500px at 95% 90%, rgba(108,92,231,.08), transparent 55%),
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%),
+        var(--bg-base);
     }
 
     .hero{
@@ -130,7 +135,10 @@
     <div class="wrap">
       <div class="card">
         <div class="left">
-          <img src="Logo_enfocate.png" alt="ENFÓCATE">
+          <div class="brand">
+            <img src="Logo_enfocate.png" alt="ENFÓCATE">
+          </div>
+
           <div class="eyebrow">Programa ENFÓCATE · 12 semanas</div>
 
           <h1>Consigue clientes constantes y vive de tu fotografía con seguridad y estrategia</h1>
