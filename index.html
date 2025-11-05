@@ -15,19 +15,13 @@
       --muted:#475569;
       --accent:#6c5ce7;
       --accent-hover:#5948d9;
-
-      /* Fondo lila premium */
       --bg1:#f5f3ff;
       --bg2:#ebe7ff;
       --bg-base:#faf7ff;
-
       --card:#ffffffcc;
       --radius:18px;
       --shadow:0 18px 40px rgba(2,6,23,.10);
       --max:1150px;
-
-      /* Imagen derecha: Opción A (Unsplash) */
-      --side-image:url('https://images.unsplash.com/photo-1614944158590-1ffa18d44fd5?auto=format&fit=crop&w=1200&q=80');
     }
 
     *{box-sizing:border-box}
@@ -56,7 +50,6 @@
       gap:clamp(18px,4vw,42px);
       background:var(--card);
       backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
       border-radius:var(--radius);
       border:1px solid rgba(15,23,42,.06);
       box-shadow:var(--shadow);
@@ -65,7 +58,6 @@
 
     .left{padding:clamp(22px,4.8vw,56px)}
 
-    /* Logo 1 (negro) más grande */
     .brand img{
       height:54px;
       width:auto;
@@ -96,6 +88,7 @@
       margin:0 0 22px;
       max-width:62ch;
     }
+
     .bullets{display:grid;gap:10px;margin:0 0 28px}
     .bullet{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:clamp(15px,2vw,18px)}
     .check{
@@ -119,8 +112,10 @@
       min-height:360px;position:relative;
       background:
         linear-gradient(to top, rgba(15,23,42,.35), rgba(15,23,42,.15)),
-        var(--side-image);
-      background-size:cover;background-position:center;
+        url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?auto=format&fit=crop&w=1600&q=80');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
       filter:grayscale(40%) contrast(1.06) brightness(.98);
     }
 
